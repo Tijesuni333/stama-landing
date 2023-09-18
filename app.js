@@ -1,12 +1,21 @@
 
 //mobile nav
 const barIcon = document.querySelector('.menubar');
-const mobileNav = document.querySelector('.mobile_nav');
+const navlinks = document.querySelector('.nav__links');
+const navlinkcontainer = document.querySelector('.navbarcontainer');
 
 
 barIcon.addEventListener('click', ()=>{
-    mobileNav.classList.toggle('appear');
-   
+    // navlinkcontainer.classList.toggle('appear');
+    const navlinkcontainerHeight = navlinkcontainer.getBoundingClientRect().height;
+    let navlinksHeight = navlinks.getBoundingClientRect().height;
+    navlinksHeight = navlinksHeight + 30;
+
+    if(navlinkcontainerHeight === 0){
+        navlinkcontainer.style.height= `${navlinksHeight}px`;
+    }else{
+        navlinkcontainer.style.height= 0;
+    }
 });
 
 // section__header'
